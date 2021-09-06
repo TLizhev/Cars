@@ -26,7 +26,6 @@ namespace Cars.Controllers
         [HttpPost]
         public IActionResult Add(AddCarFormModel car)
         {
-           
 
             if (!ModelState.IsValid)
             {
@@ -40,6 +39,7 @@ namespace Cars.Controllers
                 Description = car.Description,
                 ImageUrl = car.ImageUrl,
                 CategoryId = car.CategoryId,
+                Year = car.Year,
             };
             this.data.Cars.Add(carData);
             this.data.SaveChanges();
